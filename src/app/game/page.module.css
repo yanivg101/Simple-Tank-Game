@@ -1,0 +1,156 @@
+.main {
+  min-height: 100vh;
+  background: #0a0a0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.gameOver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  border: 3px solid #333;
+  text-align: center;
+}
+
+.gameOver h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.win {
+  color: #4CAF50;
+  text-shadow: 0 0 30px rgba(76, 175, 80, 0.5);
+}
+
+.lose {
+  color: #F44336;
+  text-shadow: 0 0 30px rgba(244, 67, 54, 0.5);
+}
+
+.finalScores {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.finalScoreItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.finalScoreItem span:first-child {
+  font-size: 14px;
+  color: #666;
+}
+
+.finalScoreItem .playerScore {
+  font-size: 36px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.finalScoreItem .aiScore {
+  font-size: 36px;
+  font-weight: bold;
+  color: #F44336;
+}
+
+.vs {
+  font-size: 24px;
+  color: #444;
+}
+
+.restartButton {
+  padding: 15px 40px;
+  font-size: 18px;
+  background: linear-gradient(135deg, #4CAF50, #2196F3);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restartButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(76, 175, 80, 0.4);
+}
+
+.highScores {
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.highScores h3 {
+  color: #888;
+  margin-bottom: 15px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.highScores ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.highScores li {
+  padding: 8px 20px;
+  color: #666;
+  font-size: 14px;
+  border-bottom: 1px solid #222;
+}
+
+.highScores li:last-child {
+  border-bottom: none;
+}
+
+.highScores li span:first-child {
+  color: #4CAF50;
+}
+
+.highScores li span:last-child {
+  color: #F44336;
+}
+
+.modeSelector {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.modeButton {
+  padding: 15px 30px;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #444;
+  border-radius: 12px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modeButton:hover {
+  border-color: #666;
+  color: #aaa;
+}
+
+.activeMode {
+  border-color: #4CAF50;
+  color: #4CAF50;
+  background: rgba(76, 175, 80, 0.1);
+}

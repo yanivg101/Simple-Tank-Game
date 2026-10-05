@@ -1,0 +1,376 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #0a0a0f;
+  padding: 20px;
+  position: relative;
+  user-select: none;
+}
+
+.canvas {
+  border: 3px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 0 30px rgba(0, 150, 255, 0.2);
+  cursor: crosshair;
+}
+
+.startOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 40px 60px;
+  border-radius: 16px;
+  border: 2px solid #333;
+}
+
+.startOverlay h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #4CAF50, #2196F3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.startOverlay p {
+  font-size: 18px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.controls p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.controls strong {
+  color: #4CAF50;
+}
+
+.mapSelectorStart {
+  margin: 20px 0;
+}
+
+.mapSelectorStart span {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.modeSelectorStart {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.modeButtonStart {
+  padding: 10px 25px;
+  background: #1a1a2e;
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.modeButtonStart:hover {
+  border-color: #555;
+  color: #aaa;
+}
+
+.modeButtonStart.active {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: #fff;
+}
+
+.difficultySelector {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.difficultyButton {
+  padding: 8px 20px;
+  background: #1a1a2e;
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.difficultyButton:hover {
+  border-color: #555;
+  color: #aaa;
+}
+
+.difficultyButton.active {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: #fff;
+}
+
+.mapButtons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mapButtonStart {
+  padding: 10px 20px;
+  background: #1a1a2e;
+  border: 2px solid #333;
+  border-radius: 8px;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.mapButtonStart:hover {
+  border-color: #4CAF50;
+  color: #4CAF50;
+}
+
+.mapButtonStart.active {
+  background: #4CAF50;
+  border-color: #4CAF50;
+  color: #fff;
+}
+
+.startButton {
+  margin-top: 20px;
+  padding: 15px 50px;
+  font-size: 20px;
+  background: linear-gradient(135deg, #4CAF50, #2196F3);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.startButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(76, 175, 80, 0.4);
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 640px;
+  padding: 10px 30px;
+  background: linear-gradient(180deg, rgba(20, 20, 30, 0.95) 0%, rgba(15, 15, 25, 0.9) 100%);
+  border-radius: 16px 16px 0 0;
+  border: 2px solid #444;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}
+
+.hudLeft,
+.hudRight {
+  flex: 1;
+}
+
+.hudRight {
+  text-align: right;
+}
+
+.hudCenter {
+  text-align: center;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.playerLabel,
+.aiLabel {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #666;
+}
+
+.playerScore {
+  font-size: 32px;
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+.aiScore {
+  font-size: 32px;
+  font-weight: bold;
+  color: #F44336;
+}
+
+.timer {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: #FFD700;
+}
+
+.mapName {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.hpBars {
+  width: 640px;
+  padding: 8px 30px;
+  background: linear-gradient(180deg, rgba(15, 15, 25, 0.9) 0%, rgba(20, 20, 30, 0.95) 100%);
+  border-radius: 0 0 16px 16px;
+  border: 2px solid #444;
+  border-top: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+}
+
+.hpBar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hpBar span {
+  font-size: 12px;
+  color: #888;
+  width: 30px;
+}
+
+.hpBarFill {
+  flex: 1;
+  height: 20px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.hpBarValue {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #8BC34A);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.volumeControls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.volumeSlider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.volumeSlider label {
+  font-size: 14px;
+  color: #888;
+  min-width: 50px;
+}
+
+.volumeSlider input[type="range"] {
+  width: 100px;
+  height: 6px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #333;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+}
+
+.volumeSlider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.volumeSlider input[type="range"]::-webkit-slider-thumb:hover {
+  background: #45a049;
+}
+
+.volumeSlider input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+  border: none;
+}
+
+.volumeSlider span {
+  font-size: 12px;
+  color: #666;
+  min-width: 35px;
+  text-align: left;
+}
+
+.pauseOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.85);
+  padding: 40px 80px;
+  border-radius: 20px;
+  border: 3px solid #4CAF50;
+  text-align: center;
+  z-index: 20;
+}
+
+.pauseOverlay h2 {
+  font-size: 48px;
+  color: #4CAF50;
+  margin: 0 0 20px 0;
+  text-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+}
+
+.pauseOverlay p {
+  font-size: 18px;
+  color: #888;
+  margin: 0;
+}
+
+.pauseOverlay .resumeHint {
+  margin-top: 30px;
+  padding: 15px 30px;
+  background: rgba(76, 175, 80, 0.2);
+  border-radius: 10px;
+  color: #4CAF50;
+  font-size: 16px;
+}
